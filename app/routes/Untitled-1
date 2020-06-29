@@ -1,0 +1,2 @@
+
+TOKEN=17b16f672d491ff6b0108894fc5e23a3 LIST_ID=5ef91eba10eb112b2a33e5fb NAME="Banan" sh curl-scripts/item/create.sh
