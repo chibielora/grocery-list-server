@@ -15,3 +15,6 @@ curl "${API}${URL_PATH}" \
   }'
 
 echo
+
+
+# TOKEN TO TEST DB 68108c005a9f48101e36b65974244b0a

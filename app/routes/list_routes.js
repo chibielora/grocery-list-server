@@ -31,14 +31,14 @@ const router = express.Router()
 // GET /list
 router.get('/list', requireToken, (req, res, next) => {
   List.find()
-    .then(list => {
+    .then(lists => {
       // `list` will be an array of Mongoose documents
       // we want to convert each one to a POJO, so we use `.map` to
       // apply `.toObject` to each one
-      return list.map(list => list.toObject())
+      return lists.map(list => list.toObject())
     })
     // respond with status 200 and JSON of the list
-    .then(list => res.status(200).json({ list: list }))
+    .then(lists => res.status(200).json({ lists: lists }))
     // if an error occurs, pass it to the handler
     .catch(next)
 })
