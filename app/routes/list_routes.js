@@ -63,9 +63,7 @@ router.post('/list', requireToken, (req, res, next) => {
 
   List.create(req.body.list)
     // respond to succesful `create` with status 201 and JSON of new "list"
-    .then(list => {
-      res.status(201).json({ list: list.toObject() })
-    })
+    .then(list => res.status(201).json({ list: list.toObject() }))
     // if an error occurs, pass it off to our error handler
     // the error handler needs the error message and the `res` object so that it
     // can send an error message back to the client

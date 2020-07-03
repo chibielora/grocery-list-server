@@ -65,7 +65,9 @@ router.patch('/list/:list_id/grocery/:id', requireToken, removeBlanks, (req, res
       grocery.set(groceryData)
       return list.save()
     })
-    .then(() => res.sendStatus(204))
+    .then(list => res.status(200).json({
+      list: list
+    }))
     .catch(next)
 })
 
