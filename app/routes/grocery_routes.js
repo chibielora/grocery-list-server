@@ -40,7 +40,7 @@ router.post('/list/:list_id/grocery', requireToken, (req, res, next) => {
   List.findById(listId)
     .then(handle404)
     .then(list => {
-      console.log(list)
+      // console.log(list)
       list.groceries.push(groceryData)
       return list.save()
     })
