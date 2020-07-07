@@ -41,6 +41,7 @@ router.post('/list/:list_id/grocery', requireToken, (req, res, next) => {
     .then(handle404)
     .then(list => {
       // console.log(list)
+      requireOwnership(req, list)
       list.groceries.push(groceryData)
       return list.save()
     })
